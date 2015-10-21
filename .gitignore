@@ -5,4 +5,4 @@ obj
 *.suo
 *.user
 packages
-nuget/*
+build/*
