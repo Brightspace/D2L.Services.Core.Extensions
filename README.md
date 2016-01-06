@@ -1,16 +1,19 @@
-D2L.Services.Core.Extensions
-============================
+# D2L.Services.Core.Extensions
+
+[![Build status](https://ci.appveyor.com/api/projects/status/gbmpmlsuy129eu67?svg=true)](https://ci.appveyor.com/project/Brightspace/d2l-services-core-extensions)
 
 Common D2L extension methods for .NET classes
 
-Releasing new versions
-----------------------
+## Contributing
 
-This library uses [semantic versioning](http://semver.org).
+1. **Fork** the repository. Committing directly against this repository is
+   highly discouraged.
 
-Make sure you've opened and built the package in Visual Studio at least once so that the `build` folder exists.
+2. Make your modifications in a branch, updating and writing new tests.
 
-After your changes have been merged into master and your working directory is clean and up to date you need to decide how to bump the version.
+3. Ensure that all tests pass.
 
-Assuming you want to bump the minor version, run `build/Bump_Minor.ps1`. This will increment the version and push to `origin/master`.
-Jenkins will then take care of deploying the new package for you and email the results (TODO).
+4. `rebase` your changes against master. *Do not merge*.
+
+5. Submit a pull request to this repository. Wait for tests to run and someone
+   to chime in.
