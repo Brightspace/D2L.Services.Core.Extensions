@@ -1,6 +1,6 @@
 # D2L.Services.Core.Extensions
 
-[![Build status](https://ci.appveyor.com/api/projects/status/gbmpmlsuy129eu67?svg=true)](https://ci.appveyor.com/project/Brightspace/d2l-services-core-extensions)
+[![Build status](https://ci.appveyor.com/api/projects/status/nfv7v89a88p4xr3a?svg=true)](https://ci.appveyor.com/project/Brightspace/d2l-services-core-extensions)
 
 Common D2L extension methods for .NET classes
 
