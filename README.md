@@ -1,8 +1,9 @@
 # D2L.Services.Core.Extensions
 
 [![Build status](https://ci.appveyor.com/api/projects/status/nfv7v89a88p4xr3a/branch/master?svg=true)](https://ci.appveyor.com/project/Brightspace/d2l-services-core-extensions/branch/master)
+[![NuGet](https://img.shields.io/nuget/dt/D2L.Services.Core.Extensions.svg)](https://www.nuget.org/packages/D2L.Services.Core.Extensions)
 
-Common D2L extension methods for .NET classes
+Common D2L extension methods for .NET classes.
 
 ## Contributing
 
