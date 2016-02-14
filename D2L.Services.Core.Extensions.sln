@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2L.Services.Core.Extensions", "D2L.Services.Core.Extensions\D2L.Services.Core.Extensions.csproj", "{5B81E1DA-2DCE-49AF-B836-01DA090F6FFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2L.Services.Core.Extensions", "src\D2L.Services.Core.Extensions\D2L.Services.Core.Extensions.csproj", "{5B81E1DA-2DCE-49AF-B836-01DA090F6FFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2L.Services.Core.Extensions.UnitTests", "D2L.Services.Core.Extensions.UnitTests\D2L.Services.Core.Extensions.UnitTests.csproj", "{1F5ACBFA-96B5-42C5-9E6E-AE509BE094E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2L.Services.Core.Extensions.UnitTests", "test\D2L.Services.Core.Extensions.UnitTests\D2L.Services.Core.Extensions.UnitTests.csproj", "{1F5ACBFA-96B5-42C5-9E6E-AE509BE094E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{530BF04A-C76B-4BF0-8587-5E2FD190F7B9}"
 EndProject
