@@ -5,12 +5,13 @@
     "warningsAsErrors": true
   },
   "dependencies": {
-    "Microsoft.NETCore.Runtime": "1.0.1-beta-*",
-    "System.IO": "4.0.11-beta-*",
-    "System.Console": "4.0.0-beta-*",
-    "System.Linq": "4.0.1-beta-*",
-    "System.Runtime": "4.0.21-beta-*",
-    "System.Security.Claims": "4.0.1-beta-*"
+    "Microsoft.NETCore.Platforms": "1.0.1-*",
+    "Microsoft.NETCore.Runtime": "1.0.1-*",
+    "System.IO": "4.1.0-*",
+    "System.Console": "4.0.0-*",
+    "System.Linq": "4.1.0-*",
+    "System.Runtime": "4.1.0-*",
+    "System.Security.Claims": "4.0.1-*"
   },
   "frameworks": {
     "dnxcore50": {
