@@ -46,6 +46,7 @@
     <Compile Include="System.Collections.Generic.IEnumerableClaim.Extensions.cs" />
     <Compile Include="System.DateTime.Extensions.cs" />
     <Compile Include="System.IDisposable.Extensions.cs" />
+    <Compile Include="System.Object.Extensions.cs" />
     <Compile Include="System.Threading.Tasks.Extensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
