@@ -13,6 +13,12 @@ namespace D2L.Services {
 		/// <param name="function">
 		/// The async function to execute on each element of the enumerable.
 		/// </param>
+		/// <exception cref="AggregateException">
+		/// An exception was thrown by one or more invocations of
+		/// <paramref name="function"/>. The exceptions thrown are stored in the
+		/// <see cref="AggregateException.InnerExceptions" /> of the
+		/// <see cref="AggregateException"/>.
+		/// </exception>
 		public static Task ForEachInParallelAsync<T>(
 			this IEnumerable<T> collection,
 			Func<T,Task> function
@@ -30,9 +36,16 @@ namespace D2L.Services {
 		/// included in the results.
 		/// </param>
 		/// <returns>
-		/// A list filtered on the given predicate. The ordering of the elements
-		/// is preserved.
+		/// An <see cref="IEnumerable{T}"/> that contains elements from the
+		/// input sequence that satisfy the <paramref name="predicate"/>. The
+		/// ordering of the elements is preserved.
 		/// </returns>
+		/// <exception cref="AggregateException">
+		/// An exception was thrown by one or more invocations of
+		/// <paramref name="predicate"/>. The exceptions thrown are stored in the
+		/// <see cref="AggregateException.InnerExceptions" /> of the
+		/// <see cref="AggregateException"/>.
+		/// </exception>
 		public static async Task<IEnumerable<T>> FilterInParallelAsync<T>(
 			this IEnumerable<T> collection,
 			Func<T, Task<bool>> predicate
@@ -53,10 +66,16 @@ namespace D2L.Services {
 		/// The async transformation function to apply to each element.
 		/// </param>
 		/// <returns>
-		/// An IEnumerable{T} whose elements are the result of invoking the
-		/// <paramref name="transform"/> function on each element of source.
-		/// The ordering of the elements is preserved.
+		/// An <see cref="IEnumerable{TOut}"/> whose elements are the result of
+		/// invoking the <paramref name="transform"/> function on each element
+		/// of the input sequence. The ordering of the elements is preserved.
 		/// </returns>
+		/// <exception cref="AggregateException">
+		/// An exception was thrown by one or more invocations of
+		/// <paramref name="transform"/>. The exceptions thrown are stored in the
+		/// <see cref="AggregateException.InnerExceptions" /> of the
+		/// <see cref="AggregateException"/>.
+		/// </exception>
 		public static async Task<IEnumerable<TOut>> MapInParallelAsync<TIn,TOut>(
 			this IEnumerable<TIn> collection,
 			Func<TIn, Task<TOut>> transform
