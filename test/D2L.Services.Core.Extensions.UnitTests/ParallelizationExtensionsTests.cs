@@ -33,12 +33,12 @@ namespace D2L.Services {
 		
 		[Test]
 		public async Task MapInParallelAsyncTest() {
-			int[] numbers = new[]{ 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9 };
+			int[] numbers = new[]{ 3, 6, 9, 12, 15, 18, 21, 24, 27 };
 			
-			IEnumerable<int> expected = numbers.Select( n => (n + 5) % 10 );
+			IEnumerable<int> expected = numbers.Select( n => n + 1 );
 			IEnumerable<int> actual = await numbers.MapInParallelAsync( async n => {
 				await RandomDelay( 900 ).SafeAsync();
-				return ( n + 5 ) % 10;
+				return n + 1;
 			}).SafeAsync();
 			
 			CollectionAssert.AreEqual( expected, actual );
