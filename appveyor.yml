@@ -10,3 +10,5 @@ build:
   publish_nuget_symbols: true
   parallel: true
   verbosity: minimal
+configuration:
+- Release
