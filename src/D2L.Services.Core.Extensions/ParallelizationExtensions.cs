@@ -11,6 +11,9 @@ namespace D2L.Services {
 		/// Invokes an asynchronous function on a collection of values. The
 		/// function is invoked on every element in parallel.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of items on which to operate.
+		/// </param>
 		/// <param name="function">
 		/// The async function to execute on each element of the enumerable.
 		/// </param>
@@ -32,6 +35,9 @@ namespace D2L.Services {
 		/// function is invoked on every element in parallel with each other up
 		/// to <paramref name="maxConcurrency"/> at once.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of iems on which to operate.
+		/// </param>
 		/// <param name="function">
 		/// The async function to execute on each element of the enumerable.
 		/// </param>
@@ -62,12 +68,15 @@ namespace D2L.Services {
 				await WaitOnAllTasksAsync( tasks ).SafeAsync();
 			}
 		}
-		
+
 		/// <summary>
 		/// Filters a sequence of values using an asynchronous predicate
 		/// function. All elements are asynchronously checked against the
 		/// predicate in parallel. The ordering of the elements is preserved.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of iems on which to operate.
+		/// </param>
 		/// <param name="predicate">
 		/// An async function that returns <c>true</c> iff the element should be
 		/// included in the results.
@@ -93,7 +102,7 @@ namespace D2L.Services {
 				await storedCollection.MapInParallelAsync( predicate ).SafeAsync()
 			);
 		}
-		
+
 		/// <summary>
 		/// Filters a sequence of values using an asynchronous predicate
 		/// function. All elements are asynchronously checked against the
@@ -101,6 +110,9 @@ namespace D2L.Services {
 		/// <paramref name="maxConcurrency"/> at once. The ordering of the
 		/// elements is preserved.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of iems on which to operate.
+		/// </param>
 		/// <param name="predicate">
 		/// An async function that returns <c>true</c> iff the element should be
 		/// included in the results.
@@ -134,13 +146,16 @@ namespace D2L.Services {
 				await storedCollection.MapInParallelAsync( predicate, maxConcurrency ).SafeAsync()
 			);
 		}
-		
+
 		/// <summary>
 		/// Projects each element of a sequence into a new form using an
 		/// asynchronous transformation function. All transformations are
 		/// performed asynchronously and in parallel with each other. The
 		/// ordering of the elements is preserved.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of iems on which to operate.
+		/// </param>
 		/// <param name="transform">
 		/// The async transformation function to apply to each element.
 		/// </param>
@@ -163,7 +178,7 @@ namespace D2L.Services {
 			await WaitOnAllTasksAsync( tasks ).SafeAsync();
 			return tasks.Select( completedTask => completedTask.Result );
 		}
-		
+
 		/// <summary>
 		/// Projects each element of a sequence into a new form using an
 		/// asynchronous transformation function. All transformations are
@@ -171,6 +186,9 @@ namespace D2L.Services {
 		/// <paramref name="maxConcurrency"/> at once.
 		/// The ordering of the elements is preserved.
 		/// </summary>
+		/// <param name="collection">
+		/// The set of iems on which to operate.
+		/// </param>
 		/// <param name="transform">
 		/// The async transformation function to apply to each element.
 		/// </param>
