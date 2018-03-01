@@ -14,7 +14,7 @@ namespace D2L.Services {
 		
 		private Random m_rng;
 		
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void TestFixtureSetUp() {
 			m_rng = new Random( DateTime.Now.GetHashCode() );
 		}
