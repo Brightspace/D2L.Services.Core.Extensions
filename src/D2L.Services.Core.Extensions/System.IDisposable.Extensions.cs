@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace D2L.Services {
 	public static partial class DotNetExtensions {
-		
+
 		/// <summary>
 		/// Dispose if non-null
 		/// </summary>
@@ -12,7 +12,7 @@ namespace D2L.Services {
 				@this.Dispose();
 			}
 		}
-		
+
 		/// <summary>
 		/// Disposes the current object if it is not null. If an exception would
 		/// be thrown, <paramref name="currentException"/> is changed to include
@@ -47,7 +47,7 @@ namespace D2L.Services {
 					currentException = newException;
 				} else if( currentException is AggregateException ) {
 					List<Exception> exceptions = new List<Exception>();
-					exceptions.AddRange( ((AggregateException)currentException).InnerExceptions );
+					exceptions.AddRange( ( ( AggregateException )currentException ).InnerExceptions );
 					exceptions.Add( newException );
 					currentException = new AggregateException( exceptions );
 				} else {
@@ -58,6 +58,6 @@ namespace D2L.Services {
 				}
 			}
 		}
-		
+
 	}
 }
