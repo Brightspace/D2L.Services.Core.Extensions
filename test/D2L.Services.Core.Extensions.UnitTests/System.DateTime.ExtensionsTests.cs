@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace D2L.Services {
 	[TestFixture]
-    public sealed class DateTimeExtensionsTests {
+	public sealed class DateTimeExtensionsTests {
 		[Test]
 		public void TimeSinceUnixEpoch_UnixEpoch_0() {
 			var dt = DotNetExtensions.UNIX_EPOCH.TimeSinceUnixEpoch();
@@ -18,5 +18,5 @@ namespace D2L.Services {
 			Assert.AreEqual( 1, dt.Days );
 			Assert.AreEqual( 0, dt.Milliseconds );
 		}
-    }
+	}
 }
