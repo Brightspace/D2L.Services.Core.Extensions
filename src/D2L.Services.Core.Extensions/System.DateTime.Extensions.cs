@@ -11,7 +11,7 @@ namespace D2L.Services {
 		/// Get the time since Unix Epoch: 00:00:00 UTC January 1st 1970
 		/// </summary>
 		public static TimeSpan TimeSinceUnixEpoch( this DateTime @this ) {
-			return @this.ToUniversalTime().Subtract( UNIX_EPOCH );			
+			return @this.ToUniversalTime().Subtract( UNIX_EPOCH );
 		}
 	}
 }

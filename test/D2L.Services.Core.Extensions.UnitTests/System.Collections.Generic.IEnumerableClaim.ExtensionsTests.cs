@@ -42,8 +42,7 @@ namespace D2L.Services {
 		public void TryGetClaim_EmptyClaims_False() {
 			var claims = new List<Claim>();
 
-			string value;
-			bool result = claims.TryGetClaim( "something", out value );
+			bool result = claims.TryGetClaim( "something", out string value );
 
 			Assert.IsNull( value );
 			Assert.IsFalse( result );
@@ -55,8 +54,7 @@ namespace D2L.Services {
 				new Claim( "foo", "bar" )
 			};
 
-			string value;
-			bool result = claims.TryGetClaim( "something", out value );
+			bool result = claims.TryGetClaim( "something", out string value );
 
 			Assert.IsNull( value );
 			Assert.IsFalse( result );
@@ -71,8 +69,7 @@ namespace D2L.Services {
 				new Claim( EXPECTED_NAME, EXPECTED_VALUE )
 			};
 
-			string value;
-			bool result = claims.TryGetClaim( EXPECTED_NAME, out value );
+			bool result = claims.TryGetClaim( EXPECTED_NAME, out string value );
 
 			Assert.IsTrue( result );
 			Assert.AreEqual( EXPECTED_VALUE, value );

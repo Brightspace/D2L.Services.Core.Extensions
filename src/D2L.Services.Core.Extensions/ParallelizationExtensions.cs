@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace D2L.Services {
 	public static partial class DotNetExtensions {
-		
+
 		/// <summary>
 		/// Invokes an asynchronous function on a collection of values. The
 		/// function is invoked on every element in parallel.
@@ -25,11 +25,11 @@ namespace D2L.Services {
 		/// </exception>
 		public static Task ForEachInParallelAsync<T>(
 			this IEnumerable<T> collection,
-			Func<T,Task> function
+			Func<T, Task> function
 		) {
 			return WaitOnAllTasksAsync( collection.Select( function ) );
 		}
-		
+
 		/// <summary>
 		/// Invokes an asynchronous function on a collection of values. The
 		/// function is invoked on every element in parallel with each other up
@@ -55,7 +55,7 @@ namespace D2L.Services {
 		/// </exception>
 		public static async Task ForEachInParallelAsync<T>(
 			this IEnumerable<T> collection,
-			Func<T,Task> function,
+			Func<T, Task> function,
 			int maxConcurrency
 		) {
 			ValidateMaxConcurrency( maxConcurrency );
@@ -170,7 +170,7 @@ namespace D2L.Services {
 		/// <see cref="AggregateException.InnerExceptions" /> of the
 		/// <see cref="AggregateException"/>.
 		/// </exception>
-		public static async Task<IEnumerable<TOut>> MapInParallelAsync<TIn,TOut>(
+		public static async Task<IEnumerable<TOut>> MapInParallelAsync<TIn, TOut>(
 			this IEnumerable<TIn> collection,
 			Func<TIn, Task<TOut>> transform
 		) {
@@ -209,7 +209,7 @@ namespace D2L.Services {
 		/// <exception cref="ArgumentOutOfRangeException">
 		/// <paramref name="maxConcurrency"/> is nonpositive
 		/// </exception>
-		public static async Task<IEnumerable<TOut>> MapInParallelAsync<TIn,TOut>(
+		public static async Task<IEnumerable<TOut>> MapInParallelAsync<TIn, TOut>(
 			this IEnumerable<TIn> collection,
 			Func<TIn, Task<TOut>> transform,
 			int maxConcurrency
@@ -225,7 +225,7 @@ namespace D2L.Services {
 				return tasks.Select( completedTask => completedTask.Result );
 			}
 		}
-		
+
 		private static async Task WaitOnAllTasksAsync( IEnumerable<Task> tasks ) {
 			Task allTasks = Task.WhenAll( tasks );
 			try {
@@ -238,7 +238,7 @@ namespace D2L.Services {
 				throw allTasks.Exception ?? exception;
 			}
 		}
-		
+
 		private static async Task ReleaseOnCompletion(
 			this Task task,
 			SemaphoreSlim semaphore
@@ -249,7 +249,7 @@ namespace D2L.Services {
 				semaphore.Release();
 			}
 		}
-		
+
 		private static async Task<T> ReleaseOnCompletion<T>(
 			this Task<T> task,
 			SemaphoreSlim semaphore
@@ -260,7 +260,7 @@ namespace D2L.Services {
 				semaphore.Release();
 			}
 		}
-		
+
 		private static IEnumerable<T> Filter<T>(
 			IList<T> values,
 			IEnumerable<bool> includeBits
@@ -268,12 +268,12 @@ namespace D2L.Services {
 			int i = 0;
 			foreach( bool shouldInclude in includeBits ) {
 				if( shouldInclude ) {
-					yield return values[i];
+					yield return values[ i ];
 				}
 				i++;
 			}
 		}
-		
+
 		private static void ValidateMaxConcurrency( int maxConcurrency ) {
 			if( maxConcurrency <= 0 ) {
 				throw new ArgumentOutOfRangeException(
@@ -282,6 +282,6 @@ namespace D2L.Services {
 				);
 			}
 		}
-		
+
 	}
 }
