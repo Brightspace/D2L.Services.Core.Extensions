@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\D2L.Services.Core.Extensions\D2L.Services.Core.Extensions.csproj">
-      <Project>{5b81e1da-2dce-49af-b836-01da090f6ffa}</Project>
+      <Project>{dd377efe-becb-4b17-a018-b896d9b04a5d}</Project>
       <Name>D2L.Services.Core.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
