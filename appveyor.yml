@@ -1,4 +1,4 @@
-version: 2.0.0.{build}
+version: 2.0.1.{build}
 
 image: Visual Studio 2017
 
@@ -31,6 +31,5 @@ deploy:
     api_key:
       # D2L.Services.Core.Extensions (Expires: 2019-12-03)
       secure: +21KhruOphAnQKZlSV7L9T50ByQRyTpgf5Ok+3sUV+kVpO4IIwsZM+7a5dt6T0HZ
-    artifact: src\**\*.nupkg
     on:
       APPVEYOR_REPO_TAG: true
