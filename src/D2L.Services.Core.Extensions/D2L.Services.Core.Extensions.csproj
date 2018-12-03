@@ -8,7 +8,10 @@
     <Product>D2L.Services.Core.Extensions</Product>
     <Description>Core .NET extension methods for D2L services</Description>
     <Company>D2L Corporation</Company>
+    <Authors>D2L</Authors>
     <Copyright>Copyright © D2L Corporation 2018</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Brightspace/D2L.Services.Core.Extensions</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
