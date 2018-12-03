@@ -1,17 +1,27 @@
+version: 2.0.0.{build}
+
 image: Visual Studio 2017
-pull_requests:
-  do_not_increment_build_number: true
-skip_tags: true
-clone_depth: 5
-nuget:
-  account_feed: true
-  project_feed: true
+
+configuration: Release
+platform: Any CPU
+
 before_build:
-  - nuget restore
-build:
-  publish_nuget: true
-  publish_nuget_symbols: true
-  parallel: true
-  verbosity: minimal
-configuration:
-- Release
+  - dotnet restore
+
+build_script:
+  - dotnet build
+
+after_build:
+  - dotnet pack src\D2L.Services.Core.Extensions\D2L.Services.Core.Extensions.csproj
+
+test_script:
+  - dotnet test test\D2L.Services.Core.Extensions.UnitTests\D2L.Services.Core.Extensions.UnitTests.csproj
+
+dotnet_csproj:
+  patch: true
+  file: src\**\*.csproj
+  version: '{version}'
+
+artifacts:
+  - path: src\**\*.nupkg
+    name: NuGet
