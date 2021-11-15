@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
-    <Version>0.0.0</Version>
+    <Version>1.0.0</Version>
     <Title>D2L.Services.Core.Extensions</Title>
     <Product>D2L.Services.Core.Extensions</Product>
     <Description>Core .NET extension methods for D2L services</Description>
     <Company>D2L Corporation</Company>
     <Authors>D2L</Authors>
-    <Copyright>Copyright © D2L Corporation 2018</Copyright>
+    <Copyright>Copyright © D2L Corporation 2018 - 2021</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Brightspace/D2L.Services.Core.Extensions</PackageProjectUrl>
   </PropertyGroup>

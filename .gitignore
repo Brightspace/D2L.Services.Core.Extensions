@@ -8,3 +8,5 @@ obj
 packages
 build/*
 project.lock.json
+
+/TestResult.xml

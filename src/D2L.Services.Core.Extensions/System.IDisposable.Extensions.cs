@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace D2L.Services {
 	public static partial class DotNetExtensions {
@@ -11,6 +12,14 @@ namespace D2L.Services {
 			if( @this != null ) {
 				@this.Dispose();
 			}
+		}
+
+		/// <summary>
+		/// Dispose if non-null
+		/// </summary>
+		public static ValueTask SafeDisposeAsync( this IAsyncDisposable @this ) {
+			if( @this == null ) return ValueTask.CompletedTask;
+			return @this.DisposeAsync();
 		}
 
 		/// <summary>
